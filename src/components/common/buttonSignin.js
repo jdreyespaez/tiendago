@@ -30,7 +30,7 @@ var styles = StyleSheet.create({
     borderRadius: 100,
     padding: 15,
     borderColor: '#21C064',
-    marginTop: 10,
+    marginTop: 30,
     backgroundColor: '#21C064',
     width: 230
   },
