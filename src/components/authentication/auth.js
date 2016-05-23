@@ -14,14 +14,14 @@ module.exports = React.createClass({
     return (
       <Image source={require('../../../images/IntroX3.png')}
         style={styles.container}>
-        <View style={[styles.header, this.border('red')]}>
+        <View style={styles.header}>
           <Image source={require('../../../images/logo.png')}
-            style={[styles.logo, this.border('white')]}>
+            style={styles.logo}>
           </Image>
         </View>
 
-        <View style={[styles.footer, this.border('blue')]}>
-          <View style={[styles.buttons, this.border('yellow')]}>
+        <View style={styles.footer}>
+          <View style={styles.buttons}>
             <ButtonSignin text={'INICIAR SESIÓN'} onPress={this.onSigninPress} />
             <ButtonSignup text={'CREAR CUENTA'}  />
           </View>
@@ -29,15 +29,9 @@ module.exports = React.createClass({
       </Image>
     );
   },
-  border: function(color){
-    return {
-      borderColor: color,
-      borderWidth: 4
-    }
-  },
   onSigninPress: function() {
     this.props.navigator.push({name: 'signin'});
-  }
+  },
 });
 
 var styles = StyleSheet.create({
@@ -61,8 +55,9 @@ var styles = StyleSheet.create({
   buttons: {
   },
   logo: {
-    width: 180,
-    height: 50,
+    width: 200,
+    height: 70,
+    resizeMode: 'stretch',
   },
   welcome: {
     fontSize: 20,

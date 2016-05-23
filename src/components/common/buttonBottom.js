@@ -3,13 +3,13 @@ import React from 'react';
 import {
   Text,
   StyleSheet,
-  TouchablHighlight
+  TouchableHighlight
 } from 'react-native';
 
 module.exports = React.createClass({
   render: function() {
     return (
-      <TouchablHighlight
+      <TouchableHighlight
         style={styles.button}
         underlayColor={'green'}
         onPress={this.props.onPress}
@@ -17,22 +17,21 @@ module.exports = React.createClass({
         <Text style={styles.buttonText}>
           {this.props.text}
         </Text>
-      </TouchablHighlight>
+      </TouchableHighlight>
     );
   }
 });
 
 var styles = StyleSheet.create({
   button: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 2,
-    padding: 5,
-    borderColor: 'green'
+    flex: 2.5,
+    backgroundColor: '#21C064',
   },
   buttonText: {
-    flex: 1,
+    justifyContent: 'center',
     alignSelf: 'center',
-    fontSize: 20
+    marginTop: 23,
+    fontFamily: 'OpenSans',
+    color: '#fff',
   }
 });
