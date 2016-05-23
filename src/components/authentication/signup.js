@@ -1,11 +1,11 @@
 import React from 'react';
 import {
   View,
+  TouchableHighlight,
   Text,
-  StyleSheet,
   TextInput,
   Image,
-  TouchableHighlight,
+  StyleSheet,
 } from 'react-native';
 
 import ButtonFacebook from '../common/buttonFacebook';
@@ -24,34 +24,47 @@ module.exports = React.createClass({
               style={styles.toolbarButton} />
           </TouchableHighlight>
 
-          <Text style={styles.toolbarTitle}>Iniciar Sesión</Text>
+          <Text style={styles.toolbarTitle}>Crear cuenta</Text>
           <Text style={styles.toolbarButton}></Text>
         </View>
 
         <View style={styles.userInfo}>
-          <View style={styles.inputWrapper}>
-            <TextInput
-              style={styles.input}
-              placeholder={'EMAIL'}
-              />
-          </View>
-          <View style={styles.inputWrapper}>
-            <TextInput
-              placeholder={'CONTRASEÑA'}
-              style={styles.input}
-              secureTextEntry={true}
-              />
-            <Image source={require('../../../images/help_button.png')}
-              style={styles.terms} />
-          </View>
+            <View style={styles.inputWrapper}>
+              <TextInput
+                style={styles.input}
+                placeholder={'NOMBRE'}
+                />
+            </View>
+
+            <View style={styles.inputWrapper}>
+              <TextInput
+                style={styles.input}
+                placeholder={'EMAIL'}
+                />
+            </View>
+
+            <View style={styles.inputWrapper}>
+              <TextInput
+                placeholder={'CONTRASEÑA'}
+                style={styles.input}
+                secureTextEntry={true}
+                />
+            </View>
+        </View>
+
+        <View style={styles.termsOfUse}>
+          <Text style={styles.toolbarButton}></Text>
+          <Text style={styles.text}>
+            Al tocar <Text style={{fontWeight: '600'}}>Crear cuenta</Text> estás aceptando nuestros <Text style={{color: '#1D56FD'}}>Términos de uso</Text> y <Text style={{color: '#1D56FD'}}>Política de privacidad</Text>.</Text>
+          <Text style={styles.toolbarButton}></Text>
         </View>
 
         <View style={styles.wrapperFacebook}>
-          <ButtonFacebook text={'CONÉCTATE CON FACEBOOK'} />
+          <ButtonFacebook text={'CREAR CON FACEBOOK'} />
         </View>
 
         <View style={styles.wrapperBottom}>
-          <ButtonBottom text={'ENTRAR'} onPress={this.onEnterPress}/>
+          <ButtonBottom text={'ENTRAR'} />
         </View>
 
       </View>
@@ -60,20 +73,17 @@ module.exports = React.createClass({
   onBackPress: function() {
     this.props.navigator.pop();
   },
-  onEnterPress: function() {
-    this.props.navigator.push({name: 'categories'});
-  },
   border: function(color){
     return {
       borderColor: color,
-      borderWidth: 1.5
+      borderWidth: 1.5,
     }
   },
 });
 
 var styles = StyleSheet.create({
   mainContainer: {
-    flex: 1
+    flex: 1,
   },
   toolbar: {
     backgroundColor: '#fff',
@@ -89,7 +99,7 @@ var styles = StyleSheet.create({
     marginLeft: 10,
   },
   toolbarTitle: {
-    color: 'black',
+    color: '#343434',
     textAlign: 'center',
     fontFamily: 'OpenSans',
     flex: 1,
@@ -114,14 +124,24 @@ var styles = StyleSheet.create({
     width: 250,
     flexDirection: 'row',
   },
-  terms: {
-    width: 20,
-    height: 20,
+  termsOfUse: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  text: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    fontFamily: 'OpenSans',
+    fontSize: 10,
+    fontWeight: '900',
+    textAlign: 'center',
+    width: 260,
   },
   wrapperFacebook: {
     flex: 4.5,
   },
   wrapperBottom: {
-    flex: 2.5,
+    flex: 3,
   },
 });

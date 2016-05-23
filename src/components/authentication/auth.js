@@ -23,7 +23,7 @@ module.exports = React.createClass({
         <View style={styles.footer}>
           <View style={styles.buttons}>
             <ButtonSignin text={'INICIAR SESIÓN'} onPress={this.onSigninPress} />
-            <ButtonSignup text={'CREAR CUENTA'}  />
+            <ButtonSignup text={'CREAR CUENTA'} onPress={this.onSignupPress} />
           </View>
         </View>
       </Image>
@@ -31,6 +31,9 @@ module.exports = React.createClass({
   },
   onSigninPress: function() {
     this.props.navigator.push({name: 'signin'});
+  },
+  onSignupPress: function() {
+    this.props.navigator.push({name: 'signup'});
   },
 });
 
