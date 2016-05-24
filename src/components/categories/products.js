@@ -19,17 +19,23 @@ module.exports = React.createClass({
             onPress={this.onBackPress}>
             <Image
               source={require('../../../images/arrow_back.png')}
-              style={[styles.toolbarButton, this.border('yellow')]} />
+              style={[styles.toolbarButton]} />
           </TouchableHighlight>
-          <Text style={[styles.toolbarTitle, this.border('green')]}>Bebidas</Text>
+          <Text style={[styles.toolbarTitle]}>Bebidas</Text>
           <Image
             source={require('../../../images/search-icon-black.png')}
-            style={[styles.toolbarButton, this.border('yellow')]} />
+            style={[styles.toolbarButton]} />
         </View>
 
-        <View style={[styles.searchBarContainer, this.border('brown')]}>
+        <View style={[styles.searchBarContainer]}>
           <View style={[styles.searchBar]}>
-
+            <Image
+              source={require('../../../images/search-icon.png')}
+              style={[styles.searchIcon]} />
+            <TextInput
+              placeholder={'¿Qué producto buscas?'}
+              style={[styles.searchInput]}
+              />
           </View>
         </View>
 
@@ -89,8 +95,19 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#FFF',
     borderColor: '#FFA255',
-    borderWidth: 1.5,
+    borderWidth: 1,
     borderRadius: 100,
+  },
+  searchIcon: {
+    width: 18,
+    height: 18,
+    resizeMode: 'contain',
+    margin: 7,
+  },
+  searchInput: {
+    width: 200,
+    fontFamily: 'OpenSans',
+    fontSize: 14,
   },
   listView: {
     flex: 20,

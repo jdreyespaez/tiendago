@@ -40,7 +40,7 @@ module.exports = React.createClass({
 
         <View style={[styles.categoriesContainer]}>
           <View style={[styles.frame]}>
-            <View style={[styles.item, this.border('yellow')]}>
+            <View style={[styles.item]}>
               <View style={[styles.itemImage]}>
                 <Image
                   source={require('../../../images/shopping-cart.png')}
@@ -48,7 +48,7 @@ module.exports = React.createClass({
               </View>
               <Text style={[styles.itemText]}>MERCADO</Text>
             </View>
-            <View style={[styles.item, this.border('blue')]}>
+            <View style={[styles.item]}>
               <View style={[styles.itemImage]}>
                 <Image
                   source={require('../../../images/coffee.png')}
@@ -59,8 +59,8 @@ module.exports = React.createClass({
             <TouchableHighlight
               underlayColor={'white'}
               onPress={this.onPress}
-              style={[styles.button, this.border('black')]}>
-              <View style={[styles.item, this.border('red')]}>
+              style={[styles.button]}>
+              <View style={[styles.item]}>
                 <View style={[styles.itemImage]}>
                   <Image
                     source={require('../../../images/beer.png')}
