@@ -18,95 +18,102 @@ module.exports = React.createClass({
             onPress={this.onBackPress}>
             <Image
               source={require('../../../images/arrow_back.png')}
-              style={[styles.toolbarButton, this.border('green')]} />
+              style={[styles.toolbarButton]} />
           </TouchableHighlight>
-          <Text style={[styles.toolbarTitle, this.border('red')]}>Categorías</Text>
+          <Text style={[styles.toolbarTitle]}>Categorías</Text>
           <Image
             source={require('../../../images/menu.png')}
-            style={[styles.toolbarButton, this.border('green')]} />
+            style={[styles.toolbarButton]} />
         </View>
 
-        <View style={[styles.frame, this.border('black')]}>
-          <View style={[styles.item, this.border('yellow')]}>
-            <View style={[styles.itemImage, this.border('black')]}>
-              <Image
-                source={require('../../../images/shopping-cart.png')}
-                style={[styles.icon]} />
-            </View>
-            <Text style={[styles.itemText, this.border('green')]}>MERCADO</Text>
-          </View>
-          <View style={[styles.item, this.border('yellow')]}>
-            <View style={[styles.itemImage, this.border('black')]}>
-              <Image
-                source={require('../../../images/coffee.png')}
-                style={[styles.icon]} />
-            </View>
-              <Text style={[styles.itemText, this.border('green')]}>DESAYUNOS</Text>
-          </View>
-          <View style={[styles.item, this.border('yellow')]}>
-            <View style={[styles.itemImage, this.border('black')]}>
-              <Image
-                source={require('../../../images/beer.png')}
-                style={[styles.icon]} />
-            </View>
-            <Text style={[styles.itemText, this.border('green')]}>BEBIDAS</Text>
+        <View style={[styles.searchBarContainer]}>
+          <View style={[styles.searchBar]}>
+            <Image
+              source={require('../../../images/search-icon.png')}
+              style={[styles.searchIcon]} />
+            <TextInput
+              placeholder={'¿Qué producto buscas?'}
+              style={[styles.searchInput]}
+              />
           </View>
         </View>
 
-        <View style={[styles.frame, this.border('black')]}>
-          <View style={[styles.item, this.border('yellow')]}>
-            <View style={[styles.itemImage, this.border('black')]}>
-              <Image
-                source={require('../../../images/shopping-cart.png')}
-                style={[styles.icon]} />
+        <View style={[styles.categoriesContainer]}>
+          <View style={[styles.frame]}>
+            <View style={[styles.item]}>
+              <View style={[styles.itemImage]}>
+                <Image
+                  source={require('../../../images/shopping-cart.png')}
+                  style={[styles.icon]} />
+              </View>
+              <Text style={[styles.itemText]}>MERCADO</Text>
             </View>
-            <Text style={[styles.itemText, this.border('green')]}>MERCADO</Text>
+            <View style={[styles.item]}>
+              <View style={[styles.itemImage]}>
+                <Image
+                  source={require('../../../images/coffee.png')}
+                  style={[styles.icon]} />
+              </View>
+                <Text style={[styles.itemText]}>DESAYUNOS</Text>
+            </View>
+            <View style={[styles.item]}>
+              <View style={[styles.itemImage]}>
+                <Image
+                  source={require('../../../images/beer.png')}
+                  style={[styles.icon]} />
+              </View>
+              <Text style={[styles.itemText]}>BEBIDAS</Text>
+            </View>
           </View>
-          <View style={[styles.item, this.border('yellow')]}>
-            <View style={[styles.itemImage, this.border('black')]}>
-              <Image
-                source={require('../../../images/coffee.png')}
-                style={[styles.icon]} />
+
+          <View style={[styles.frame]}>
+            <View style={[styles.item]}>
+              <View style={[styles.itemImage]}>
+                <Image
+                  source={require('../../../images/heartbeat.png')}
+                  style={[styles.icon]} />
+              </View>
+              <Text style={[styles.itemText]}>ASEO PERSONAL</Text>
             </View>
-              <Text style={[styles.itemText, this.border('green')]}>DESAYUNOS</Text>
+            <View style={[styles.item]}>
+              <View style={[styles.itemImage]}>
+                <Image
+                  source={require('../../../images/home.png')}
+                  style={[styles.icon]} />
+              </View>
+                <Text style={[styles.itemText]}>ASEO HOGAR</Text>
+            </View>
+            <View style={[styles.item]}>
+              <View style={[styles.itemImage]}>
+                <Image
+                  source={require('../../../images/glass.png')}
+                  style={[styles.icon]} />
+              </View>
+              <Text style={[styles.itemText]}>RUMBA</Text>
+            </View>
           </View>
-          <View style={[styles.item, this.border('yellow')]}>
-            <View style={[styles.itemImage, this.border('black')]}>
-              <Image
-                source={require('../../../images/beer.png')}
-                style={[styles.icon]} />
+
+          <View style={[styles.frame]}>
+            <View style={[styles.item]}>
+              <View style={[styles.itemImage]}>
+                <Image
+                  source={require('../../../images/birthday-cake.png')}
+                  style={[styles.icon]} />
+              </View>
+              <Text style={[styles.itemText]}>SNACK Y DULCES</Text>
             </View>
-            <Text style={[styles.itemText, this.border('green')]}>BEBIDAS</Text>
+            <View style={[styles.item]}>
+              <View style={[styles.itemImage, this.border('white')]}></View>
+              <Text style={[styles.itemText]}></Text>
+            </View>
+            <View style={[styles.item]}>
+              <View style={[styles.itemImage, this.border('white')]}>
+
+              </View>
+              <Text style={[styles.itemText]}></Text>
+            </View>
           </View>
         </View>
-
-        <View style={[styles.frame, this.border('black')]}>
-          <View style={[styles.item, this.border('yellow')]}>
-            <View style={[styles.itemImage, this.border('black')]}>
-              <Image
-                source={require('../../../images/shopping-cart.png')}
-                style={[styles.icon]} />
-            </View>
-            <Text style={[styles.itemText, this.border('green')]}>MERCADO</Text>
-          </View>
-          <View style={[styles.item, this.border('yellow')]}>
-            <View style={[styles.itemImage, this.border('black')]}>
-              <Image
-                source={require('../../../images/coffee.png')}
-                style={[styles.icon]} />
-            </View>
-              <Text style={[styles.itemText, this.border('green')]}>DESAYUNOS</Text>
-          </View>
-          <View style={[styles.item, this.border('yellow')]}>
-            <View style={[styles.itemImage, this.border('black')]}>
-              <Image
-                source={require('../../../images/beer.png')}
-                style={[styles.icon]} />
-            </View>
-            <Text style={[styles.itemText, this.border('green')]}>BEBIDAS</Text>
-          </View>
-        </View>
-
 
 
       </View>
@@ -118,7 +125,7 @@ module.exports = React.createClass({
   border: function(color){
     return {
       borderColor: color,
-      borderWidth: 1.5
+      borderWidth: 1
     }
   },
 });
@@ -126,6 +133,32 @@ module.exports = React.createClass({
 var styles = StyleSheet.create({
   mainContainer: {
     flex: 1
+  },
+  searchBarContainer: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  searchBar: {
+    width: 330,
+    height: 35,
+    backgroundColor: '#F3F3F3',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  searchIcon: {
+    width: 18,
+    height: 18,
+    resizeMode: 'contain',
+    margin: 7,
+  },
+  searchInput: {
+    width: 200,
+    fontFamily: 'OpenSans',
+    fontSize: 14,
+  },
+  categoriesContainer: {
+    flex: 14,
   },
   toolbar: {
     backgroundColor: '#fff',
@@ -137,8 +170,9 @@ var styles = StyleSheet.create({
   },
   toolbarButton: {
     width: 20,
-    height: 15,
+    height: 20,
     marginRight: 10,
+    resizeMode: 'contain',
   },
   toolbarTitle: {
     color: 'black',
@@ -151,20 +185,27 @@ var styles = StyleSheet.create({
     paddingTop: 5,
     paddingBottom: 5,
     flexDirection: 'row',
-    marginTop: 10,
   },
   item: {
     flex: 1,
-    width: 40,
+    width: 80,
+  },
+  itemChild: {
+    flex: 1,
+    alignItems: 'flex-start',
   },
   icon: {
     width: 25,
     height: 25,
+    resizeMode: 'contain',
   },
   itemText: {
-    height: 20,
+    height: 15,
     textAlign: 'center',
+    fontSize: 10,
+    color: '#333333',
     fontFamily: 'OpenSans',
+    marginTop: 5
   },
   itemImage: {
     flex: 1,
@@ -172,7 +213,9 @@ var styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     borderRadius: 100,
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
+    borderColor: '#C2C2C2',
+    borderWidth: 1,
   }
 });
