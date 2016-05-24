@@ -64,11 +64,14 @@ module.exports = React.createClass({
         </View>
 
         <View style={styles.wrapperBottom}>
-          <ButtonBottom text={'ENTRAR'} />
+          <ButtonBottom text={'ENTRAR'} onPress={this.onEnterPress} />
         </View>
 
       </View>
     );
+  },
+  onEnterPress: function() {
+    this.props.navigator.push({name: 'categories'});
   },
   onBackPress: function() {
     this.props.navigator.pop();
