@@ -8,12 +8,14 @@ import Auth from './components/authentication/auth';
 import Signin from './components/authentication/signin';
 import Signup from './components/authentication/signup';
 import Categories from './components/categories/categories';
+import Products from './components/categories/products';
 
 var ROUTES = {
   auth: Auth,
   signin: Signin,
   signup: Signup,
   categories: Categories,
+  products: Products,
 };
 
 module.exports = React.createClass({

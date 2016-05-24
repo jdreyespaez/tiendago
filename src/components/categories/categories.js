@@ -40,7 +40,7 @@ module.exports = React.createClass({
 
         <View style={[styles.categoriesContainer]}>
           <View style={[styles.frame]}>
-            <View style={[styles.item]}>
+            <View style={[styles.item, this.border('yellow')]}>
               <View style={[styles.itemImage]}>
                 <Image
                   source={require('../../../images/shopping-cart.png')}
@@ -48,7 +48,7 @@ module.exports = React.createClass({
               </View>
               <Text style={[styles.itemText]}>MERCADO</Text>
             </View>
-            <View style={[styles.item]}>
+            <View style={[styles.item, this.border('blue')]}>
               <View style={[styles.itemImage]}>
                 <Image
                   source={require('../../../images/coffee.png')}
@@ -56,14 +56,19 @@ module.exports = React.createClass({
               </View>
                 <Text style={[styles.itemText]}>DESAYUNOS</Text>
             </View>
-            <View style={[styles.item]}>
-              <View style={[styles.itemImage]}>
-                <Image
-                  source={require('../../../images/beer.png')}
-                  style={[styles.icon]} />
+            <TouchableHighlight
+              underlayColor={'white'}
+              onPress={this.onPress}
+              style={[styles.button, this.border('black')]}>
+              <View style={[styles.item, this.border('red')]}>
+                <View style={[styles.itemImage]}>
+                  <Image
+                    source={require('../../../images/beer.png')}
+                    style={[styles.icon]} />
+                </View>
+                <Text style={[styles.itemText]}>BEBIDAS</Text>
               </View>
-              <Text style={[styles.itemText]}>BEBIDAS</Text>
-            </View>
+            </TouchableHighlight>
           </View>
 
           <View style={[styles.frame]}>
@@ -128,6 +133,9 @@ module.exports = React.createClass({
       borderWidth: 1
     }
   },
+  onPress: function() {
+    this.props.navigator.push({name: 'products'});
+  }
 });
 
 var styles = StyleSheet.create({
@@ -186,9 +194,11 @@ var styles = StyleSheet.create({
     paddingBottom: 5,
     flexDirection: 'row',
   },
+  button: {
+    flex: 1
+  },
   item: {
     flex: 1,
-    width: 80,
   },
   itemChild: {
     flex: 1,
