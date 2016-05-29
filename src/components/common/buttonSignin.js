@@ -6,8 +6,8 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-module.exports = React.createClass({
-  render: function() {
+export default class ButtonSignin extends React.Component{
+  render() {
     return (
       <TouchableHighlight
         style={styles.button}
@@ -20,7 +20,7 @@ module.exports = React.createClass({
       </TouchableHighlight>
     );
   }
-});
+}
 
 var styles = StyleSheet.create({
   button: {

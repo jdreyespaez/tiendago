@@ -10,9 +10,43 @@ import {
 
 import ButtonFacebook from '../common/buttonFacebook';
 import ButtonBottom from '../common/buttonBottom';
+import Spinner from 'react-native-loading-spinner-overlay';
+import Api from '../../utils/api';
 
-module.exports = React.createClass({
-  render: function() {
+
+export default class Signin extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+      visible: false,
+      error: false
+    }
+  }
+  handleChangeEmail = (e) => {
+    this.setState({
+      email: e.nativeEvent.text
+    });
+  }
+  handleChangePassword = (e) => {
+    this.setState({
+      password: e.nativeEvent.text
+    })
+  }
+  handleSubmit = () => {
+    var email = this.state.email;
+    var password = this.state.password;
+    this.setState({
+      visible: true
+    });
+    console.log('Enviando email: ', this.state.email);
+    console.log('Enviando contraseña: ', this.state.password);
+    Api.addUser(email, password)
+  }
+  render() {
+    console.log(this.state.email);
+    console.log(this.state.password);
     return (
       <View style={styles.mainContainer}>
         <View style={styles.toolbar}>
@@ -33,6 +67,8 @@ module.exports = React.createClass({
             <TextInput
               style={styles.input}
               placeholder={'EMAIL'}
+              value={this.state.email}
+              onChange={this.handleChangeEmail}
               />
           </View>
           <View style={styles.inputWrapper}>
@@ -40,6 +76,8 @@ module.exports = React.createClass({
               placeholder={'CONTRASEÑA'}
               style={styles.input}
               secureTextEntry={true}
+              value={this.state.password}
+              onChange={this.handleChangePassword}
               />
             <Image source={require('../../../images/help_button.png')}
               style={styles.terms} />
@@ -51,25 +89,25 @@ module.exports = React.createClass({
         </View>
 
         <View style={styles.wrapperBottom}>
-          <ButtonBottom text={'ENTRAR'} onPress={this.onEnterPress}/>
+          <ButtonBottom
+            text={'ENTRAR'}
+            onPress={this.handleSubmit}
+            />
         </View>
 
       </View>
     );
-  },
-  onBackPress: function() {
+  }
+  onBackPress = () => {
     this.props.navigator.pop();
-  },
-  onEnterPress: function() {
-    this.props.navigator.push({name: 'categories'});
-  },
-  border: function(color){
+  }
+  border(color){
     return {
       borderColor: color,
       borderWidth: 1.5
     }
-  },
-});
+  }
+};
 
 var styles = StyleSheet.create({
   mainContainer: {
