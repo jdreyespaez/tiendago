@@ -71,6 +71,9 @@ export default class Signup extends React.Component{
         console.log('El localhost no sirvió')
       })
   }
+  onBackPress = () => {
+    this.props.navigator.pop();
+  }
   render() {
     return (
       <View style={styles.mainContainer}>
@@ -145,9 +148,6 @@ export default class Signup extends React.Component{
 
       </View>
     );
-  }
-  onBackPress() {
-    this.props.navigator.pop();
   }
   border(color){
     return {
