@@ -21,7 +21,6 @@ export default class Signin extends React.Component{
       email: '',
       password: '',
       visible: false,
-      error: false
     }
   }
   handleChangeEmail = (e) => {
@@ -60,7 +59,6 @@ export default class Signin extends React.Component{
       })
   }
   render() {
-
     return (
       <View style={styles.mainContainer}>
         <View style={styles.toolbar}>

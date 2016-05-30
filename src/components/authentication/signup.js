@@ -14,6 +14,16 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import Api from '../../utils/api';
 
 export default class Signup extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      visible: false,
+    }
+  }
   render() {
     return (
       <View style={styles.mainContainer}>
@@ -34,7 +44,14 @@ export default class Signup extends React.Component{
             <View style={styles.inputWrapper}>
               <TextInput
                 style={styles.input}
-                placeholder={'NOMBRE'}
+                placeholder={'NOMBRES'}
+                />
+            </View>
+
+            <View style={styles.inputWrapper}>
+              <TextInput
+                style={styles.input}
+                placeholder={'APELLIDOS'}
                 />
             </View>
 
