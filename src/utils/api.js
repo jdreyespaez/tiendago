@@ -1,5 +1,5 @@
 var Api = {
-  addUser(email, password){
+  addUser(firstName, lastName, email, password){
     firstName = firstName.trim();
     lastName = lastName.trim();
     email = email.trim();

@@ -51,7 +51,8 @@ export default class Signin extends React.Component{
           visible: false
         })
         console.log("El email: ", res.email,
-          "Password Promes exitosa: ", res.password);
+          "Password Promes exitosa: ", res.password
+        );
       })
       .catch((err) => {
         console.log('El servidor local no sirve')

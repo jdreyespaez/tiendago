@@ -44,6 +44,33 @@ export default class Signup extends React.Component{
       password: e.nativeEvent.text
     })
   }
+  handleSubmit = () => {
+    var firstName = this.state.firstName;
+    var lastName = this.state.lastName;
+    var email = this.state.email;
+    var password = this.state.password;
+    this.setState({
+      visible: true
+    });
+    Api.addUser(firstName, lastName, email, password)
+      .then((res) => {
+        this.props.navigator.push({
+          name: 'categories',
+          passProps: {res}
+        });
+        this.setState({
+          visible: false
+        })
+        console.log("Nombres :", res.firstName,
+          "Apellidos: ", res.lastName,
+          "Email :", res.email,
+          "Password: ", res.password
+        );
+      })
+      .catch((err) => {
+        console.log('El localhost no sirvió')
+      })
+  }
   render() {
     return (
       <View style={styles.mainContainer}>
@@ -111,14 +138,13 @@ export default class Signup extends React.Component{
         </View>
 
         <View style={styles.wrapperBottom}>
-          <ButtonBottom text={'ENTRAR'} onPress={this.onEnterPress} />
+          <ButtonBottom
+            text={'ENTRAR'}
+            onPress={this.handleSubmit} />
         </View>
 
       </View>
     );
-  }
-  onEnterPress() {
-    this.props.navigator.push({name: 'categories'});
   }
   onBackPress() {
     this.props.navigator.pop();
