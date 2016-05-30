@@ -40,13 +40,27 @@ export default class Signin extends React.Component{
     this.setState({
       visible: true
     });
-    console.log('Enviando email: ', this.state.email);
-    console.log('Enviando contraseña: ', this.state.password);
+    console.log('Enviando email: ', email);
+    console.log('Enviando contraseña: ', password);
     Api.addUser(email, password)
+      .then((res) => {
+        this.props.navigator.push({
+          name: 'categories',
+          passProps: {res}
+        });
+        this.setState({
+          visible: false
+        })
+        console.log("El email: ", res.email,
+          "Password Promes exitosa: ", res.password);
+      })
+      .catch((err) => {
+        console.log('El servidor local no sirve')
+        console.log(email, password)
+      })
   }
   render() {
-    console.log(this.state.email);
-    console.log(this.state.password);
+
     return (
       <View style={styles.mainContainer}>
         <View style={styles.toolbar}>

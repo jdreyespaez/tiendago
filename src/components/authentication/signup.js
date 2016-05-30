@@ -10,9 +10,11 @@ import {
 
 import ButtonFacebook from '../common/buttonFacebook';
 import ButtonBottom from '../common/buttonBottom';
+import Spinner from 'react-native-loading-spinner-overlay';
+import Api from '../../utils/api';
 
-module.exports = React.createClass({
-  render: function() {
+export default class Signup extends React.Component{
+  render() {
     return (
       <View style={styles.mainContainer}>
         <View style={styles.toolbar}>
@@ -69,20 +71,20 @@ module.exports = React.createClass({
 
       </View>
     );
-  },
-  onEnterPress: function() {
+  }
+  onEnterPress() {
     this.props.navigator.push({name: 'categories'});
-  },
-  onBackPress: function() {
+  }
+  onBackPress() {
     this.props.navigator.pop();
-  },
-  border: function(color){
+  }
+  border(color){
     return {
       borderColor: color,
       borderWidth: 1.5,
     }
-  },
-});
+  }
+};
 
 var styles = StyleSheet.create({
   mainContainer: {

@@ -1,17 +1,23 @@
 var Api = {
   addUser(email, password){
+    firstName = firstName.trim();
+    lastName = lastName.trim();
     email = email.trim();
     password = password.trim();
     var url = `http://localhost:3000/users`;
     return fetch(url, {
-      method: 'post',
-      body: JSON.stringify(email, password)
-    })
-      .then((res) => {
-        res.json()
-        console.log('Se envió')
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password
       })
-      .catch((error) => console.log('Falló envío'))
+    }).then((res) => res.json());
   }
 }
 
