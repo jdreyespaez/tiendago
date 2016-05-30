@@ -24,6 +24,26 @@ export default class Signup extends React.Component{
       visible: false,
     }
   }
+  handleChangeFirstName = (e) => {
+    this.setState({
+      firstName: e.nativeEvent.text
+    })
+  }
+  handleChangeLastName = (e) => {
+    this.setState({
+      lastName: e.nativeEvent.text
+    })
+  }
+  handleChangeEmail = (e) => {
+    this.setState({
+      email: e.nativeEvent.text
+    });
+  }
+  handleChangePassword = (e) => {
+    this.setState({
+      password: e.nativeEvent.text
+    })
+  }
   render() {
     return (
       <View style={styles.mainContainer}>
@@ -45,6 +65,8 @@ export default class Signup extends React.Component{
               <TextInput
                 style={styles.input}
                 placeholder={'NOMBRES'}
+                value={this.state.firstName}
+                onChange={this.handleChangeFirstName}
                 />
             </View>
 
@@ -52,6 +74,8 @@ export default class Signup extends React.Component{
               <TextInput
                 style={styles.input}
                 placeholder={'APELLIDOS'}
+                value={this.state.lastName}
+                onChange={this.handleChangeLastName}
                 />
             </View>
 
@@ -59,6 +83,8 @@ export default class Signup extends React.Component{
               <TextInput
                 style={styles.input}
                 placeholder={'EMAIL'}
+                value={this.state.email}
+                onChange={this.handleChangeEmail}
                 />
             </View>
 
@@ -67,6 +93,8 @@ export default class Signup extends React.Component{
                 placeholder={'CONTRASEÑA'}
                 style={styles.input}
                 secureTextEntry={true}
+                value={this.state.password}
+                onChange={this.handleChangePassword}
                 />
             </View>
         </View>
